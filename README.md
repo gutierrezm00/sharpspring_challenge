@@ -1,1 +1,0 @@
-#sharpspring_challenge
