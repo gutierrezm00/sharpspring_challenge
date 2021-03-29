@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.registerContainer {
+#registerContainer {
 	display: flex;
 	font-size: 5rem;
   flex-direction: column;
@@ -10,13 +10,8 @@
 	margin: auto;
 	position: relative;
 	text-align: center;
-	width: 40%;
-	border: solid 3px rgba(0, 0, 0, 0.333);
-	border-radius: 2rem;
-	box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.333);
+	width: 100%;
 	padding: 1rem;
-	transform: translate(0, 25%);
-
 }
 
 .submit {
@@ -39,13 +34,6 @@ label {
 	margin-top: 1rem;
 }
 
-input {
-	padding-left: 5%;
-	border-radius: 2rem;
-	width: 95%;
-	font-size: 1rem;
-	margin-top: .5rem;
-}
 
 #error {
 	margin-top: 2rem;
@@ -54,3 +42,23 @@ input {
 
 }
 
+#container {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	border: solid 3px rgba(0, 0, 0, 0.333);
+	border-radius: 2rem;
+	margin: auto;
+	text-align: center;
+	transform: translate(0, 40%);
+}
+
+#signup {
+	font-family: 'Courier New';
+	font-weight: bold;
+	margin: auto;
+	position: relative;
+	padding: 1rem;
+	width: 100%;
+}
