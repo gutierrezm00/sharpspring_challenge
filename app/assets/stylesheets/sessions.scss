@@ -1,0 +1,57 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.registerContainer {
+	display: flex;
+	font-size: 5rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+	margin: auto;
+	position: relative;
+	text-align: center;
+	width: 40%;
+	border: solid 3px rgba(0, 0, 0, 0.333);
+	border-radius: 2rem;
+	box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.333);
+	padding: 1rem;
+	transform: translate(0, 25%);
+
+}
+
+.submit {
+	height: 2rem;
+	font-size: 1.5rem;
+	font-family: 'Courier New';
+	font-weight: bold;
+	margin-top: 2rem;
+	width: 100%;
+}
+.title {
+	font-size: 4rem;
+	width: 100%;
+}
+
+label {
+	border-radius: 2rem;
+	width: 100%;
+	font-size: 2rem;
+	margin-top: 1rem;
+}
+
+input {
+	padding-left: 5%;
+	border-radius: 2rem;
+	width: 95%;
+	font-size: 1rem;
+	margin-top: .5rem;
+}
+
+#error {
+	margin-top: 2rem;
+	color: red;
+	font-size: 1rem;
+
+}
+
+

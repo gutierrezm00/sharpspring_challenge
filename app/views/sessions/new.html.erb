@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'application' %>  
+<%= stylesheet_link_tag 'sessions' %>  
+
+<%= form_tag '/login' do %>
+	<div class='registerContainer'>
+
+		<%= label_tag :register, "Login", :class => 'title' %>
+
+		<%= label_tag :email, 'Email Address' %>
+		<%= email_field_tag :email %>
+
+		<%= label_tag :password, 'Password' %>
+		<%= password_field_tag :password %>
+
+		<%= submit_tag "Login", :class => 'submit' %>
+		<div id="error">
+			<%= flash[:notice] %>
+		</div>
+
+	</div>
+
+
+<% end %>

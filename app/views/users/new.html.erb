@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'application' %>  
+<%= stylesheet_link_tag 'users' %>  
+
+<%= form_tag users_path, method: 'POST' do %>
+	<div class='registerContainer'>
+
+		<%= label_tag :register, "Register New User", :class => 'title' %>
+
+		<%= label_tag :name, 'Name' %>
+		<%= text_field_tag :name %>
+
+		<%= label_tag :email, 'Email Address' %>
+		<%= email_field_tag :email %>
+
+
+		<%= label_tag :password, 'Password' %>
+		<%= password_field_tag :password %>
+
+
+		<%= submit_tag "Submit", :class => 'submit' %>
+
+	</div>
+<% end %>
