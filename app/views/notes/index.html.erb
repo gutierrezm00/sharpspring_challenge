@@ -1,0 +1,27 @@
+
+<%= stylesheet_link_tag 'application' %>  
+<%= stylesheet_link_tag 'notes' %>  
+
+<h1>Your Notes!</h1>
+
+<div id="notesContainer">
+	<% @notes.each do |note| %>
+		<div draggable="true" id="note">
+			<div id="noteheader" >
+				<%= note.title%>
+			</div>
+			<div id="note_body" >
+				<%= note.body %>
+			</div>
+			<%= button_to "X", notes_path, method: :delete, :id => "deletebutton" %>
+		</div>
+	<% end %>
+	<div id="new_note">
+		<%= form_for notes_path, url: {action: "create"}, html: {id: "newform"} do |f| %>
+			<input id="titleinput" type="text" name="/notes[title]">
+			<textarea id="newbody" name="/notes[body]"></textarea>
+			<%= f.submit "+", id: 'createbutton' %>
+		<% end %>
+	</div>
+</div>
+
