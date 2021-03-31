@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	
-	root :to => "sessions#welcome"
+	root :to => "sessions#new"
 
   resources :users, only: [:new, :create]
 	resource :notes, only: [:index, :new, :create, :destroy, :update]
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
 
 	post '/login', to: 'sessions#create'
+
+	delete '/log_out', to: 'sessions#destroy'
 
 	get 'welcome', to: 'sessions#welcome'
 

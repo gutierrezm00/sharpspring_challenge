@@ -33,4 +33,11 @@ class SessionsController < ApplicationController
 
 	end
 
+	def destroy
+		reset_session
+		@user = nil
+		redirect_to '/login'
+	end
+
+
 end

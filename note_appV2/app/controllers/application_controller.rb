@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
 
 	respond_to :json, :html
 
-
-
 	def current_user
 		User.find_by(id: session[:user_id])
 	end
@@ -17,6 +15,6 @@ class ApplicationController < ActionController::Base
 	end
 
 	def authorized
-		redirect_to '/welcome' unless logged_in?
+		redirect_to '/login' unless logged_in?
 	end
 end
