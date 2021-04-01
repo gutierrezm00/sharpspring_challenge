@@ -14,13 +14,28 @@
  *= require_self
  */
 
-
+html,
  body {
-	background-color: rgb(246, 218, 255);
+	background: linear-gradient(#ffffff, #cacaca);
 	font-family: 'Courier New';
 	font-weight: bold;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
  }
 
+ .submit {
+	height: 2rem;
+	font-size: 1.5rem;
+	font-family: 'Courier New';
+	font-weight: bold;
+}
+.title {
+	font-size: 4rem;
+	font-family: 'Courier New';
+
+	width: 100%;
+}
 
  :link { 
 	text-decoration:none; 

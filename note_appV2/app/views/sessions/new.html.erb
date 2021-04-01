@@ -1,27 +1,21 @@
-<%= stylesheet_link_tag 'application' %>  
-<%= stylesheet_link_tag 'sessions' %>  
+<%= stylesheet_link_tag params[:controller] %>
 
-<div id='container'>
-
-	<%= form_tag '/login' do %>
-		
-		<div id='registerContainer'>
-			<%= label_tag :register, "Login", :class => 'title' %>
-
-			<%= label_tag :email, 'Email Address' %>
-			<%= email_field_tag :email %>
-
-			<%= label_tag :password, 'Password' %>
-			<%= password_field_tag :password %>
-
-			<%= submit_tag "Login", :class => 'submit' %>
-			<div id="error">
-				<%= flash[:notice] %>
+<div id='center'> 
+	<div id='container'>	
+			<div id='registerContainer'>
+				<%= form_tag '/login', :id => 'form' do %>
+					<%= label_tag :register, "Welcome Back!", :class => 'title' %>
+					<%= email_field_tag :email,nil,  :placeholder =>  "Email", class: 'input' %>
+					<%= password_field_tag :password, nil, :placeholder => "Password", class: 'input'%>
+					<%= submit_tag "Login", :id => 'login' %>
+					<div id="error">
+						<%= flash[:notice] %>
+					</div>
+				<% end %>		
 			</div>
+		<div id='signup'>
+			<%= button_to "Need to Sign Up?", '/users/new', method: :get, id: 'submit'%>
 		</div>
-	<% end %>		
-
-	<div id='signup'>
-		<%= button_to "Sign Up?", '/users/new', method: :get%>
 	</div>
-</div>
+</div 
+
