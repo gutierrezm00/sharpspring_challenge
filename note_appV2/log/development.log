@@ -18667,3 +18667,101 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 6315)
 
 
+Started GET "/login" for 127.0.0.1 at 2021-03-31 20:06:50 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 7009)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 12171)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-03-31 20:06:50 -0600
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 6313)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-03-31 20:07:40 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"wE5oBTUHu7XePWveL03gRD+qMLInc/EICAnxLWBIcbqpEsUVVKmQvv35fRmmEAF20VxJ766Qi3fE0P4iyXB0Hg==", "email"=>"mathewgutierrez00@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mathewgutierrez00@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/authorized
+Completed 302 Found in 237ms (ActiveRecord: 3.8ms | Allocations: 7097)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2021-03-31 20:07:40 -0600
+Processing by SessionsController#page_requires_login as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1015)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-03-31 20:07:40 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 362)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:9
+  Rendered notes/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 10610)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 17.1ms | ActiveRecord: 2.4ms | Allocations: 18001)
+
+
+Started DELETE "/notes" for 127.0.0.1 at 2021-03-31 20:07:49 -0600
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K3oN1Md3jUaZjaB3iJJfAQgVQvzQB2S1tAGOK11rIQJCJqDEptmmTbpJtrABz74z5uM7oVnkHsp42IEk9FMkpg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:29:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:30:in `destroy'
+  [1m[36mNote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/notes_controller.rb:30:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:30:in `destroy'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 10ms (ActiveRecord: 1.8ms | Allocations: 3594)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-03-31 20:07:49 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 90)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:9
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 8259)
+
+
+Started DELETE "/log_out" for 127.0.0.1 at 2021-03-31 20:08:19 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MZ54v7vSuSfQ8hRYz3DIYeu4mwjN2FQFs9Yw1W5/VpRYwtWv2nySLPM2Ap9GLSlTBU7iVUQ7Lnp/Dz/ax0dTMA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-03-31 20:08:19 -0600
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2891)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 6321)
+
+
