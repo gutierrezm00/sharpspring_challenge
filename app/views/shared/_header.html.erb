@@ -13,25 +13,23 @@
 		</div>
 		<div class='navButtonContainer'>
 			<div class='navButtons'>
-				<div id='textBox'>
-					Lists
-				</div>
+				<%= link_to lists_path, :action => 'go' do %>
+					<div id='textBox'>
+						Lists
+					</div>
+				<% end %>
 			</div>	
 		</div>
 		<div class='navButtonContainer'>
 			<div class='navButtons'>
-				<div id='textBox'>
-					???
-				</div>
+				<%= link_to contacts_path, :action => 'go' do %>
+					<div id='textBox'>
+						Contacts
+					</div>
+				<% end %>
 			</div>	
 		</div>
-		<div class='navButtonContainer'>
-			<div class='navButtons'>
-				<div id='textBox'>
-					Profit
-				</div>
-			</div>	
-		</div>
+
 	</div>
 	<div id='accountContainer'>
 		<div id='accountButtonContainer'>

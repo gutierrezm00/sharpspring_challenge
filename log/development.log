@@ -21304,3 +21304,603 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.5ms | Allocations: 8264)
 
 
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 09:56:06 -0600
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (40.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 2.1ms | Allocations: 385)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:9
+  Rendered notes/index.html.erb within layouts/application (Duration: 201.6ms | Allocations: 53812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 297ms (Views: 221.9ms | ActiveRecord: 47.6ms | Allocations: 67956)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-01 09:56:09 -0600
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 6622)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:53:37 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (40.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 380)
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:9
+  Rendered notes/index.html.erb within layouts/application (Duration: 51.7ms | Allocations: 9618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 64.4ms | ActiveRecord: 52.2ms | Allocations: 24246)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:53:40 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 96)
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:9
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3707)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.8ms | Allocations: 8270)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:56:08 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 346)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.5ms | Allocations: 9875)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:57:34 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 96)
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 194.9ms | Allocations: 64608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 207ms (Views: 200.4ms | ActiveRecord: 1.4ms | Allocations: 69128)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:58:07 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 90)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 41.7ms | Allocations: 27569)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.6ms | Allocations: 31998)
+
+
+Started POST "/notes" for 127.0.0.1 at 2021-04-01 21:58:12 -0600
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"ktwQYhQOStPETdWSpXre+7kGZQHRH48hr8zOKY48leYMTP8M6IgmqGOxd0Q5Kv/NrjG+ghTGuvvHOPG9JXmhrA==", "/notes"=>{"title"=>"test", "body"=>"test"}, "commit"=>"+"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:24:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:24:in `create'
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test"], ["body", "test"], ["created_at", "2021-04-02 03:58:12.759606"], ["updated_at", "2021-04-02 03:58:12.759606"], ["user_id", 1]]
+  ↳ app/controllers/notes_controller.rb:24:in `create'
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 60ms (ActiveRecord: 44.5ms | Allocations: 9731)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:58:12 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 90)
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.7ms | Allocations: 8401)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 21:58:29 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 90)
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 61.6ms | Allocations: 28169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.8ms | Allocations: 32598)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 22:41:44 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 335)
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4565)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 1.0ms | Allocations: 10103)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:10:07 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.6) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.6) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.6) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (43.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLists (20210402044232)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (61.5ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210402044232"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20210402044238)
+  [1m[35m (39.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210402044238"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:10:30 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/lists"):
+  
+actionpack (6.0.3.6) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.6) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:12:14 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 361)
+  Rendered lists/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 670)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 205ms (Views: 189.0ms | ActiveRecord: 4.1ms | Allocations: 82493)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:12:18 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 97)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 10476)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 20.6ms | ActiveRecord: 3.2ms | Allocations: 17826)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:13:18 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 500)
+  Rendered lists/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 805)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 6652)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:19 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 162)
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4351)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 9458)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:20 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 156)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4047)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 12.8ms | ActiveRecord: 0.6ms | Allocations: 8613)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:20 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 156)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 0.7ms | Allocations: 8616)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:21 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 156)
+  [1m[36mNote Load (2.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4829)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 3.4ms | Allocations: 9519)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:21 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 156)
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 5764)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 28.6ms | ActiveRecord: 2.3ms | Allocations: 10471)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:22 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 156)
+  [1m[36mNote Load (5.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 4959)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 27.0ms | ActiveRecord: 6.1ms | Allocations: 10345)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:26 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 156)
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4553)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 1.5ms | Allocations: 10361)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:26 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 156)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.8ms | Allocations: 8599)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:26 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 156)
+  [1m[36mNote Load (1.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5072)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 18.1ms | ActiveRecord: 3.4ms | Allocations: 10347)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:42 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 496)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4830)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 10305)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:13:43 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 165)
+  Rendered lists/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 334)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 5813)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2021-04-01 23:13:44 -0600
+Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering contacts/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 166)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 332)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 5715)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:13:44 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 165)
+  Rendered lists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 239)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 2.2ms | Allocations: 5147)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:13:45 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 164)
+  [1m[36mNote Load (0.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 4057)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 1.1ms | Allocations: 10377)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:13:46 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 157)
+  Rendered lists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 5139)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2021-04-01 23:13:46 -0600
+Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering contacts/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 157)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 5115)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2021-04-01 23:15:56 -0600
+Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering contacts/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 498)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 803)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 9.1ms | ActiveRecord: 5.3ms | Allocations: 11806)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:15:57 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 166)
+  Rendered lists/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 331)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 5809)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2021-04-01 23:15:58 -0600
+Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering contacts/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 165)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 239)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 5149)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:15:58 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 157)
+  Rendered lists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.3ms | Allocations: 5147)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-01 23:15:59 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 165)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered notes/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 9564)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 20.4ms | ActiveRecord: 3.6ms | Allocations: 15523)
+
+
+Started GET "/lists" for 127.0.0.1 at 2021-04-01 23:16:00 -0600
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering lists/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 165)
+  Rendered lists/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 239)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 2.5ms | Allocations: 5145)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2021-04-01 23:16:01 -0600
+Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering contacts/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 165)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 239)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 5169)
+
+

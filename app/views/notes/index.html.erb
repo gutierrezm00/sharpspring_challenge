@@ -3,8 +3,6 @@
 <%= stylesheet_link_tag 'notes' %>  
 <%= render "shared/header" %>
 
-<h1>Your Notes!</h1>
-
 <div id="notesContainer">
 	<% @notes.each do |note| %>
 		<div draggable="true" id="note">
