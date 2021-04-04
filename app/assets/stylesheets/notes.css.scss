@@ -61,26 +61,29 @@
 }
 
 #deletebutton{
+	padding: 1px;
 	font-family: "Open Sans", sans-serif;
-	right: 3px;
-	top: 3px;
-	font-size: 1.5rem;
+	right: 1px;
+	top: 1px;
+	font-size: 1rem;
 	padding: 3px;
 	border: none;
+	border-radius: 50%;
 	position: absolute;
 	width: 2rem;
 	height: 2rem;
-	background-color:rgb(172, 152, 42);
+	background-color:rgba(172, 153, 42, 0.405);
 	color: black;
 }
 
 #createbutton{
 	font-family: "Open Sans", sans-serif;
-	right: 3px;
-	top: 3px;
+	right: 1px;
+	top: 1px;
+	font-weight: bold;
 	border-radius: 50%;
-	font-size: 1.5rem;
-	padding: 3px;
+	font-size: 1rem;
+	padding: 5px;
 	border: none;
 	position: absolute;
 	width: 2rem;
@@ -130,3 +133,16 @@
 #noteheader::-webkit-scrollbar { 
 	display: none;  // Safari and Chrome
 }
+
+
+
+
+#deletebutton:hover{
+	background-color:rgba(0, 0, 0, 0.2);
+}
+
+
+#createbutton:hover{
+	background-color:rgba(0, 0, 0, 0.2);
+}
+

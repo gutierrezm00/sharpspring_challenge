@@ -1,23 +1,24 @@
 <%= stylesheet_link_tag 'application' %>  
 <%= stylesheet_link_tag 'users' %>  
 
-<%= form_tag users_path, method: 'POST' do %>
-	<div class='registerContainer'>
 
-		<%= label_tag :register, "Register New User", :class => 'title' %>
+<div id='center'> 
+	<div id='container'>
+		<div id='registerContainer'>
 
-		<%= label_tag :name, 'Name' %>
-		<%= text_field_tag :name %>
+			<%= form_tag users_path, method: 'POST',:id => 'form'  do %>
 
-		<%= label_tag :email, 'Email Address' %>
-		<%= email_field_tag :email %>
+					<%= label_tag :register, "Register New User", :class => 'title' %>
 
+					<%= text_field_tag :name, nil, :placeholder => "First and Last Name", class: 'input'%>
+					<%= email_field_tag :email, nil,  :placeholder =>  "Email", class: 'input' %>
+					<%= password_field_tag :password, nil, :placeholder => "Password", class: 'input'%>
 
-		<%= label_tag :password, 'Password' %>
-		<%= password_field_tag :password %>
-
-
-		<%= submit_tag "Submit", :class => 'submit' %>
-
+					<%= submit_tag "Submit", :id => 'submit' %>
+			<% end %>
+		</div>
 	</div>
-<% end %>
+</div 
+
+
+

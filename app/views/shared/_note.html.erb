@@ -2,9 +2,9 @@
 <div id="note">
 	<div id="noteheader" >
 		<%= note.title%>
+		<%= button_to "x", notes_path, method: :delete, :id => "deletebutton", :params => { id: note.id } %>
 	</div>
 	<div id="note_body" >
 		<%= note.body %>
 	</div>
-	<%= button_to "X", notes_path, method: :delete, :id => "deletebutton" %>
 </div>

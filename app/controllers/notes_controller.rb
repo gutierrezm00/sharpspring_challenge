@@ -2,6 +2,9 @@ class NotesController < ApplicationController
 
 	def index
     @notes = current_user.notes
+		puts @notes.inspect
+		return @notes
+
 	end
 
 	def new
@@ -33,14 +36,17 @@ class NotesController < ApplicationController
 		
 		newNote = {title: title, body: body, user_id: current_user[:id]}
 
-		# puts "newNotes #{newNote}"
-
 		@note = Note.create(newNote)
 		redirect_to '/notes' and return
 	end
 
 	def destroy
-		@note = Note.find_by(params[:id])
+		puts "params: #{params}"
+		puts "params: #{params[:id]}"
+
+		@note = Note.find_by(id: params[:id])
+
+		puts "note: #{@note}"
 		@note.destroy
 		redirect_to '/notes'
 	end
