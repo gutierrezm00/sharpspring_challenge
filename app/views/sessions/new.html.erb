@@ -8,14 +8,16 @@
 					<%= email_field_tag :email,nil,  :placeholder =>  "Email", class: 'input' %>
 					<%= password_field_tag :password, nil, :placeholder => "Password", class: 'input'%>
 					<%= submit_tag "Login", :id => 'login' %>
-					<div id="error">
-						<%= flash[:notice] %>
-					</div>
 				<% end %>		
 			</div>
 		<div id='signup'>
 			<%= button_to "Need to Sign Up?", '/users/new', method: :get, id: 'submit'%>
 		</div>
 	</div>
+	<% if flash[:notice] %>
+	<div id="error">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
 </div 
 

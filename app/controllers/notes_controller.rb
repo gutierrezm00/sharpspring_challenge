@@ -2,9 +2,7 @@ class NotesController < ApplicationController
 
 	def index
     @notes = current_user.notes
-		puts @notes.inspect
 		return @notes
-
 	end
 
 	def new
@@ -17,10 +15,6 @@ class NotesController < ApplicationController
 
 	def create
 
-
-		puts "length of title: #{params["/notes"][:title].length()}"
-		puts "lengh of body: #{params["/notes"][:body].length()}"
-
 		title = params["/notes"][:title]
 		body = params["/notes"][:body]
 
@@ -28,7 +22,6 @@ class NotesController < ApplicationController
 			flash[:notice] = 'Cannot create note with no content.'
 			redirect_to '/notes' and return
 		end
-
 
 		if(title.length() == 0)
 			title = body[0..30]
@@ -40,13 +33,40 @@ class NotesController < ApplicationController
 		redirect_to '/notes' and return
 	end
 
+	def update 
+
+		if(params[:update])
+			title = params[:title]
+			body = params[:body]
+
+			if(title.length() == 0 && body.length() == 0)
+				flash[:notice] = 'Cannot create note with no content.'
+				redirect_to '/notes' and return
+			end
+	
+			if(title.length() == 0)
+				title = body[0..30]
+			end
+			
+			@note = Note.find_by(id: params[:id])
+			@note.update(title: params[:title], body: params[:body])
+			@note.save
+
+			flash[:status] = 'Note updated!'
+			redirect_to '/notes' and return
+
+		elsif(params[:delete])
+			@note = Note.find_by(id: params[:id])
+			@note.destroy
+			flash[:status] = 'Note deleted!'
+			redirect_to '/notes' and return
+		end
+
+	end
+
 	def destroy
-		puts "params: #{params}"
-		puts "params: #{params[:id]}"
-
+		puts "destroy params: #{params}"
 		@note = Note.find_by(id: params[:id])
-
-		puts "note: #{@note}"
 		@note.destroy
 		redirect_to '/notes'
 	end
