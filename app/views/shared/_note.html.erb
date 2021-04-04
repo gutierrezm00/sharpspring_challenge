@@ -1,5 +1,22 @@
 
 <div id="note">
+
+<%= form_with model: @note do |form| %>
+	<div id="noteheader" >
+  	<%= form.text_field :title, id: 'header_input', maxlength: 30, value: note.title%>
+	</div>
+	<div id="note_body" >
+  <%= form.text_area :body, id: 'body_input', maxlength: 1000, value: note.body%>
+	</div>
+
+  <%= form.submit %>
+<% end %>
+</div>
+
+Copy
+
+
+<div id="note">
 	<div id="noteheader" >
 		<%= note.title%>
 		<%= button_to "x", notes_path, method: :delete, :id => "deletebutton", :params => { id: note.id } %>

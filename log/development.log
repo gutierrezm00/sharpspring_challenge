@@ -30904,3 +30904,1047 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.6ms | Allocations: 9182)
 
 
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:30:38 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 4557)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.7ms | Allocations: 10839)
+
+
+Started POST "/notes" for 127.0.0.1 at 2021-04-04 02:30:42 -0600
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"XQ5/2Da53csVzqDrEKtXQbRQXvs96MeT4ER2GzyXJeidRbokfDlPSeywuQ5KJ7RosHIcKbzYEgaCiGmE09iNFA==", "/notes"=>{"title"=>"Test", "body"=>"Test"}, "commit"=>"+"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Test"], ["body", "Test"], ["created_at", "2021-04-04 08:30:42.335728"], ["updated_at", "2021-04-04 08:30:42.335728"], ["user_id", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 51ms (ActiveRecord: 40.7ms | Allocations: 4817)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:30:42 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 164)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.7ms | Allocations: 317)
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 9818)
+
+
+Started POST "/notes" for 127.0.0.1 at 2021-04-04 02:31:00 -0600
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"T4x8ydF4evR3+ukXdYVD6IyKb8u+cAhaCGNvXJK7ZzuPx7k1m/jodo6E8PIvCaDBiKgtGT9A3c9qr3DDffTPxw==", "/notes"=>{"title"=>"Test", "body"=>""}, "commit"=>"+"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Test"], ["body", ""], ["created_at", "2021-04-04 08:31:00.979794"], ["updated_at", "2021-04-04 08:31:00.979794"], ["user_id", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 28ms (ActiveRecord: 2.6ms | Allocations: 4814)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:31:00 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 160)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.4ms | Allocations: 185)
+  Rendered shared/_note.html.erb (Duration: 0.3ms | Allocations: 185)
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4393)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.6ms | Allocations: 9880)
+
+
+Started DELETE "/notes" for 127.0.0.1 at 2021-04-04 02:31:02 -0600
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D4VX3keq50Gwc9yBcobq2tv8onhQLMPt5X4DVuprsYDPzpIiDSp1w0kNxWQoCgnz397gqtEcFniHshzJBSQZfA==", "id"=>"60"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:47:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+  [1m[36mNote Destroy (0.3ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 60]]
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 13ms (ActiveRecord: 6.7ms | Allocations: 3438)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:31:02 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 156)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.5ms | Allocations: 185)
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.7ms | Allocations: 9536)
+
+
+Started DELETE "/notes" for 127.0.0.1 at 2021-04-04 02:31:03 -0600
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bb26oEbpo0Z5w7KmYdNQiRrQwhmWRHL8w4ZQ999MZLut9n9cDGkxxIC9q0M7X7OgHvKAyxd0p2mhSk9oMAPMRw==", "id"=>"61"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:47:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+  [1m[36mNote Destroy (0.3ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 61]]
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 13ms (ActiveRecord: 6.6ms | Allocations: 3439)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:31:03 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 156)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.7ms | Allocations: 9178)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:32:17 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4557)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.6ms | Allocations: 10823)
+
+
+Started POST "/notes" for 127.0.0.1 at 2021-04-04 02:32:23 -0600
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"QJYS6cFXmhRQDoYLCP/VhavnJQSPuaKsJQGAHuADebeA3dcVi9cIlqlwn+5Sczasr8Vn1g6JdzlHzZ+BD0zRSw==", "/notes"=>{"title"=>"test", "body"=>"test"}, "commit"=>"+"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test"], ["body", "test"], ["created_at", "2021-04-04 08:32:23.037351"], ["updated_at", "2021-04-04 08:32:23.037351"], ["user_id", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 51ms (ActiveRecord: 41.0ms | Allocations: 4819)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:32:23 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 164)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.8ms | Allocations: 320)
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 0.8ms | Allocations: 9827)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:32:42 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 453)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.0ms | Allocations: 299)
+  Rendered notes/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 5087)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.8ms | Allocations: 11414)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:33:59 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.6ms | Allocations: 299)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 5080)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 13.9ms | ActiveRecord: 1.4ms | Allocations: 11533)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:34:07 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.5ms | Allocations: 298)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5076)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 13.4ms | ActiveRecord: 0.9ms | Allocations: 11410)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:34:21 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.7ms | Allocations: 299)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 5077)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 0.6ms | Allocations: 11425)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:34:33 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.6ms | Allocations: 299)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 5077)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.8ms | Allocations: 11421)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:34:38 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.6ms | Allocations: 299)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 5085)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 1.0ms | Allocations: 11429)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:36:25 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.7ms | Allocations: 301)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 5079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 11421)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:36:32 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.9ms | Allocations: 301)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 5079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.8ms | Allocations: 11425)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:38:59 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:21
+  Rendered shared/_note.html.erb (Duration: 0.8ms | Allocations: 299)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 5124)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.7ms | Allocations: 11456)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:39:19 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 448)
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  Rendered notes/index.html.erb within layouts/application (Duration: 362.6ms | Allocations: 164648)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.6ms | Allocations: 167841)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notes' for #<#<Class:0x00007ff8f4274fd0>:0x00007ff8f3adb030>
+Did you mean?  @notes
+               not):
+    12: 	<div id="new_note">
+    13: 		<%= form_for notes_path, url: {action: "create"}, html: {id: "newform"} do |f| %>
+    14: 			<input id="titleinput" type="text" name="/notes[title]" maxlength=30 placeholder="New Note Title">
+    15: 			<%= text_area_tag(notes, content = note.body) %>
+    16: 
+    17: 			<textarea id="newbody" name="/notes[body]" maxlength=1000  placeholder="New Note Body"></textarea>
+    18: 			<%= f.submit "+", id: 'createbutton' %>
+  
+app/views/notes/index.html.erb:15
+app/views/notes/index.html.erb:13
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:39:32 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  Rendered notes/index.html.erb within layouts/application (Duration: 327.5ms | Allocations: 164624)
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 0.6ms | Allocations: 167813)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `note' for #<#<Class:0x00007ff8f3ed3ae8>:0x00007ff8f3ed1cc0>
+Did you mean?  not
+               @notes):
+    12: 	<div id="new_note">
+    13: 		<%= form_for notes_path, url: {action: "create"}, html: {id: "newform"} do |f| %>
+    14: 			<input id="titleinput" type="text" name="/notes[title]" maxlength=30 placeholder="New Note Title">
+    15: 			<%= text_area_tag(@notes, content = note.body) %>
+    16: 
+    17: 			<textarea id="newbody" name="/notes[body]" maxlength=1000  placeholder="New Note Body"></textarea>
+    18: 			<%= f.submit "+", id: 'createbutton' %>
+  
+app/views/notes/index.html.erb:15
+app/views/notes/index.html.erb:13
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:39:39 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 448)
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Note Load (0.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  Rendered notes/index.html.erb within layouts/application (Duration: 318.8ms | Allocations: 164626)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.6ms | Allocations: 167815)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `note' for #<#<Class:0x00007ff8f4723d10>:0x00007ff8f47220a0>
+Did you mean?  not
+               @notes):
+    12: 	<div id="new_note">
+    13: 		<%= form_for notes_path, url: {action: "create"}, html: {id: "newform"} do |f| %>
+    14: 			<input id="titleinput" type="text" name="/notes[title]" maxlength=30 placeholder="New Note Title">
+    15: 			<%= text_area_tag(note, content = note.body) %>
+    16: 
+    17: 			<textarea id="newbody" name="/notes[body]" maxlength=1000  placeholder="New Note Body"></textarea>
+    18: 			<%= f.submit "+", id: 'createbutton' %>
+  
+app/views/notes/index.html.erb:15
+app/views/notes/index.html.erb:13
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:40:15 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1.0ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:7
+  Rendered shared/_note.html.erb (Duration: 0.8ms | Allocations: 300)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 5078)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 15.3ms | ActiveRecord: 0.8ms | Allocations: 11428)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:40:31 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.7ms | Allocations: 298)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 5079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.8ms | Allocations: 11417)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:51:32 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 295.9ms | Allocations: 148953)
+  Rendered notes/index.html.erb within layouts/application (Duration: 303.3ms | Allocations: 153736)
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 1.1ms | Allocations: 157017)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007ff8f6e39238>:0x00007ff8f6e42ec8>
+Did you mean?  for
+               fork):
+    1: 
+    2: <%= form_with model: @note do |note| %>
+    3:   <%= form.text_field :title %>
+    4:   <%= form.text_area :body, size: "60x10" %>
+    5:   <%= form.submit %>
+    6: <% end %>
+  
+app/views/shared/_note.html.erb:3
+app/views/shared/_note.html.erb:2
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:20
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:51:44 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 14.4ms | Allocations: 4009)
+  Rendered notes/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 8789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 1.0ms | Allocations: 15028)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:52:40 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.3ms | Allocations: 1788)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 6565)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 12810)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:53:21 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.7ms | Allocations: 1786)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 6563)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.9ms | Allocations: 12820)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:54:14 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.6ms | Allocations: 332)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 5109)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.7ms | Allocations: 11452)
+
+
+Started DELETE "/notes" for 127.0.0.1 at 2021-04-04 02:54:16 -0600
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FJ/Q5MPhxWv65jAngP39m6MyFtjLtyC/hBwEy01nNj/U1BUYiWFX6QOYKcLacR6ypxBUCkqH9Srm0BtUoiieww==", "id"=>"62"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:47:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+  [1m[36mNote Destroy (0.4ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = $1[0m  [["id", 62]]
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:50:in `destroy'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms | Allocations: 3442)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:54:16 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 164)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered notes/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3850)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.9ms | Allocations: 9209)
+
+
+Started POST "/notes" for 127.0.0.1 at 2021-04-04 02:54:20 -0600
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"9J1Miuj/u/eDzrSGXKOK9mv2dv+0fX4IfENxdKAHoS401ol2on8pdXqwrWMGL2nfb9Q0LTVNq50ej27rT0gJ0g==", "/notes"=>{"title"=>"blah", "body"=>"blah"}, "commit"=>"+"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[36mNote Create (1.3ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "blah"], ["body", "blah"], ["created_at", "2021-04-04 08:54:20.943609"], ["updated_at", "2021-04-04 08:54:20.943609"], ["user_id", 1]]
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:39:in `create'
+Redirected to http://127.0.0.1:3000/notes
+Completed 302 Found in 52ms (ActiveRecord: 42.3ms | Allocations: 4921)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:54:20 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 156)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.4ms | Allocations: 188)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 13.2ms | ActiveRecord: 0.8ms | Allocations: 9559)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:55:13 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.7ms | Allocations: 1270)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 6057)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms | Allocations: 9240)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+  <%= form.text_field :title %>
+<%= form_with model: @note do |form| %>
+
+	<div id="note">
+		<div id="noteheader" >
+			<%= note.title%>
+			<%= button_to "x", notes_path, method: :delete, :id => "deletebutton", :params => { id: note.id } %>
+		</div>
+
+		<%= form.text_area :body, size: "60x10", id: "note_body", value=note.body %>
+	</div>
+  <%= form.submit %>
+
+<% end %>
+
+):
+1:    
+2:      <%= form.text_field :title %>
+3:    <%= form_with model: @note do |form| %>
+4:    
+5:    	<div id="note">
+6:    		<div id="noteheader" >
+7:    			<%= note.title%>
+8:    			<%= button_to "x", notes_path, method: :delete, :id => "deletebutton", :params => { id: note.id } %>
+9:    		</div>
+10:    
+11:    		<%= form.text_area :body, size: "60x10", id: "note_body", value=note.body %>
+12:    	</div>
+13:      <%= form.submit %>
+14:    
+15:    <% end %>
+  
+app/views/shared/_note.html.erb:11: syntax error, unexpected ')', expecting =>
+app/views/shared/_note.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:17: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:11: syntax error, unexpected ')', expecting =>
+app/views/shared/_note.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:17: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:11: syntax error, unexpected ')', expecting =>
+app/views/shared/_note.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:17: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:11: syntax error, unexpected ')', expecting =>
+app/views/shared/_note.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:17: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:11: syntax error, unexpected ')', expecting =>
+app/views/shared/_note.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:17: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:11: syntax error, unexpected ')', expecting =>
+app/views/shared/_note.html.erb:15: syntax error, unexpected end, expecting ')'
+app/views/shared/_note.html.erb:17: syntax error, unexpected end, expecting ')'
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:20
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:55:27 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 279.4ms | Allocations: 148885)
+  Rendered notes/index.html.erb within layouts/application (Duration: 285.9ms | Allocations: 153673)
+Completed 500 Internal Server Error in 293ms (ActiveRecord: 0.6ms | Allocations: 156856)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007ff8f6b5a6c0>:0x00007ff8f6b80c08>
+Did you mean?  for
+               fork):
+    1: 
+    2:   <%= form.text_field :title %>
+    3: <%= form_with model: @note do |form| %>
+    4: 
+    5: 	<div id="note">
+  
+app/views/shared/_note.html.erb:2
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:20
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:55:45 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.6ms | Allocations: 1759)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 6539)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.8ms | Allocations: 12784)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:56:03 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.9ms | Allocations: 1762)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6547)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 15.1ms | ActiveRecord: 0.6ms | Allocations: 12800)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:56:26 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.7ms | Allocations: 1742)
+  Rendered notes/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 6519)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 12752)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:56:50 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 290.5ms | Allocations: 148702)
+  Rendered notes/index.html.erb within layouts/application (Duration: 297.7ms | Allocations: 153482)
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 0.7ms | Allocations: 156671)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `title' for #<#<Class:0x00007ff8f785ee20>:0x00007ff8f785d138>):
+    3: 
+    4: 	<div id="note">
+    5: 		<div id="noteheader" >
+    6: 			<%= form.text_field :title, id:title %>
+    7: 
+    8: 			<%= button_to "x", notes_path, method: :delete, :id => "deletebutton", :params => { id: note.id } %>
+    9: 		</div>
+  
+app/views/shared/_note.html.erb:6
+app/views/shared/_note.html.erb:2
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:20
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:56:56 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.6ms | Allocations: 1747)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 6527)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.7ms | Allocations: 12782)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:58:21 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.6ms | Allocations: 334)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 5111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.7ms | Allocations: 11447)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 02:59:17 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 0.7ms | Allocations: 336)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 5113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 13.4ms | ActiveRecord: 0.7ms | Allocations: 11447)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 03:00:09 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.7ms | Allocations: 1769)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6546)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 0.7ms | Allocations: 12783)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 03:00:23 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.4ms | Allocations: 1770)
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 6547)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 12790)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 03:00:50 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 17.0ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.9ms | Allocations: 1789)
+  Rendered notes/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 6569)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 32.4ms | ActiveRecord: 0.8ms | Allocations: 12804)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 03:02:52 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.3ms | Allocations: 1659)
+  Rendered notes/index.html.erb within layouts/application (Duration: 62.6ms | Allocations: 33053)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 69.1ms | ActiveRecord: 1.7ms | Allocations: 39409)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 03:03:53 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1.0ms | Allocations: 448)
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 2.2ms | Allocations: 1797)
+  Rendered notes/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 6575)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 0.8ms | Allocations: 12838)
+
+
+Started GET "/notes" for 127.0.0.1 at 2021-04-04 03:04:23 -0600
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering notes/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 448)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/notes/index.html.erb:20
+  Rendered shared/_note.html.erb (Duration: 1.6ms | Allocations: 1802)
+  Rendered notes/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 6579)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 12814)
+
+
