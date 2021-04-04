@@ -1,0 +1,10 @@
+
+<div id="note">
+	<div id="noteheader" >
+		<%= note.title%>
+	</div>
+	<div id="note_body" >
+		<%= note.body %>
+	</div>
+	<%= button_to "X", notes_path, method: :delete, :id => "deletebutton" %>
+</div>

@@ -5,20 +5,17 @@
 
 <div id="notesContainer">
 	<% @notes.each do |note| %>
-		<div draggable="true" id="note">
-			<div id="noteheader" >
-				<%= note.title%>
-			</div>
-			<div id="note_body" >
-				<%= note.body %>
-			</div>
-			<%= button_to "X", notes_path, method: :delete, :id => "deletebutton" %>
-		</div>
+		<%= render 'shared/note', note: note %>
 	<% end %>
+
+	<div id="error">
+		<%= flash[:notice] %>
+	</div>
 	<div id="new_note">
+
 		<%= form_for notes_path, url: {action: "create"}, html: {id: "newform"} do |f| %>
-			<input id="titleinput" type="text" name="/notes[title]">
-			<textarea id="newbody" name="/notes[body]"></textarea>
+			<input id="titleinput" type="text" name="/notes[title]" maxlength=30 placeholder="New Note Title">
+			<textarea id="newbody" name="/notes[body]" maxlength=1000  placeholder="New Note Body"></textarea>
 			<%= f.submit "+", id: 'createbutton' %>
 		<% end %>
 	</div>

@@ -14,15 +14,29 @@ class NotesController < ApplicationController
 
 	def create
 
-		puts "TRYING TO CREATE NOTE"
-		puts "params: #{params["/notes"]}"
-		newNote = {title: params["/notes"][:title], body: params["/notes"][:body], user_id: current_user[:id]}
 
-		puts "newNotes #{newNote}"
+		puts "length of title: #{params["/notes"][:title].length()}"
+		puts "lengh of body: #{params["/notes"][:body].length()}"
 
+		title = params["/notes"][:title]
+		body = params["/notes"][:body]
+
+		if(title.length() == 0 && body.length() == 0)
+			flash[:notice] = 'Cannot create note with no content.'
+			redirect_to '/notes' and return
+		end
+
+
+		if(title.length() == 0)
+			title = body[0..30]
+		end
+		
+		newNote = {title: title, body: body, user_id: current_user[:id]}
+
+		# puts "newNotes #{newNote}"
 
 		@note = Note.create(newNote)
-		redirect_to '/notes'
+		redirect_to '/notes' and return
 	end
 
 	def destroy

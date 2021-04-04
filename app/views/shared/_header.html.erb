@@ -1,45 +1,26 @@
 <div id='headerContainer'> 
 	<div id='navContainer'>
-		<div id='leftPad'>
-		</div>
-		<div class='navButtonContainer'>
-			<div class='navButtons'>
-				<%= link_to notes_path, :action => 'go' do %>
-					<div id='textBox'>
-						Notes
-					</div>
-				<% end %>
-			</div>
-		</div>
-		<div class='navButtonContainer'>
-			<div class='navButtons'>
-				<%= link_to lists_path, :action => 'go' do %>
-					<div id='textBox'>
-						Lists
-					</div>
-				<% end %>
-			</div>	
-		</div>
-		<div class='navButtonContainer'>
-			<div class='navButtons'>
-				<%= link_to contacts_path, :action => 'go' do %>
-					<div id='textBox'>
-						Contacts
-					</div>
-				<% end %>
-			</div>	
-		</div>
-
-	</div>
-	<div id='accountContainer'>
-		<div id='accountButtonContainer'>
-				<div id='accountButton'>
-					<%= link_to log_out_path, :method => :delete do %>
-						<div id='textBox'>
-							Logout
-						</div>
-					<% end %>
+			<%= link_to notes_path, :action => 'go' do %>
+				<div id='textBox'>
+					Notes
 				</div>
-		</div>
+			<% end %>
+			<%= link_to lists_path, :action => 'go' do %>
+				<div id='textBox'>
+					Lists
+				</div>
+			<% end %>
+			<%= link_to contacts_path, :action => 'go' do %>
+				<div id='textBox'>
+					Contacts
+				</div>
+			<% end %>
 	</div>
+	
+	<%= link_to log_out_path, :method => :delete do %>
+		<div id='textBox'>
+			Logout 
+		</div>
+	<% end %>
+
 </div>
